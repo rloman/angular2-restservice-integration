@@ -9,6 +9,16 @@ import {Directive, ElementRef, Renderer} from 'angular2/core';
 })
 export class AutoGrowDirective {
 
+	/* alternate
+
+	private el: HTMLElement;
+
+	constructor(el: ElementRef) {
+		this.el = el.nativeElement; // might make it shorter below in onFocus and onBlur
+	}
+
+	*/
+
 	constructor(private el: ElementRef){
 	}
 

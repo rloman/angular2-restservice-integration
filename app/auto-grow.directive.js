@@ -19,6 +19,15 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             }],
         execute: function() {
             AutoGrowDirective = (function () {
+                /* alternate
+            
+                private el: HTMLElement;
+            
+                constructor(el: ElementRef) {
+                    this.el = el.nativeElement; // might make it shorter below in onFocus and onBlur
+                }
+            
+                */
                 function AutoGrowDirective(el) {
                     this.el = el;
                 }
