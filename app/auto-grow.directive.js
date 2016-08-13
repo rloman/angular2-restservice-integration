@@ -19,19 +19,29 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             }],
         execute: function() {
             AutoGrowDirective = (function () {
+                /* alternate
+            
+                private el: HTMLElement;
+            
+                constructor(el: ElementRef) {
+                    this.el = el.nativeElement; // might make it shorter below in onFocus and onBlur
+                }
+            
+                */
                 function AutoGrowDirective(el) {
-                    this.el = el.nativeElement;
-                    this.el.style.width = '200';
+                    this.el = el;
                 }
                 AutoGrowDirective.prototype.onFocus = function () {
-                    this.el.style.width = '200';
+                    this.el.nativeElement.style.width = '200';
+                    this.el.nativeElement.style.backgroundColor = "red";
                 };
                 AutoGrowDirective.prototype.onBlur = function () {
-                    this.el.style.width = '100';
+                    this.el.nativeElement.style.width = '100';
+                    this.el.nativeElement.style.backgroundColor = "white";
                 };
                 AutoGrowDirective = __decorate([
                     core_1.Directive({
-                        selector: '[autogrow]',
+                        selector: '[autoGrow]',
                         host: {
                             '(focus)': 'onFocus()',
                             '(blur)': 'onBlur()'

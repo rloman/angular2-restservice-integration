@@ -1,7 +1,7 @@
 import {Directive, ElementRef, Renderer} from 'angular2/core';
 
 @Directive({
-	selector: '[autogrow]',	
+	selector: '[autoGrow]',	
 	host: {
 		'(focus)' : 'onFocus()',
 		'(blur)': 'onBlur()'
@@ -9,19 +9,27 @@ import {Directive, ElementRef, Renderer} from 'angular2/core';
 })
 export class AutoGrowDirective {
 
+	/* alternate
+
 	private el: HTMLElement;
 
-	constructor(el: ElementRef){
-		this.el = el.nativeElement;
-		this.el.style.width = '200';
+	constructor(el: ElementRef) {
+		this.el = el.nativeElement; // might make it shorter below in onFocus and onBlur
+	}
+
+	*/
+
+	constructor(private el: ElementRef){
 	}
 
 	onFocus() {
-		this.el.style.width = '200';
+		this.el.nativeElement.style.width = '200';
+		this.el.nativeElement.style.backgroundColor="red";
 	}
 
 	onBlur() {
-			this.el.style.width = '100';
+		this.el.nativeElement.style.width = '100';
+		this.el.nativeElement.style.backgroundColor="white";
 	}
 	
 }
