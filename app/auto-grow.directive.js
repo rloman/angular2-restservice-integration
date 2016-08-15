@@ -19,25 +19,18 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             }],
         execute: function() {
             AutoGrowDirective = (function () {
-                /* alternate
-            
-                private el: HTMLElement;
-            
-                constructor(el: ElementRef) {
-                    this.el = el.nativeElement; // might make it shorter below in onFocus and onBlur
-                }
-            
-                */
-                function AutoGrowDirective(el) {
+                function AutoGrowDirective(el, renderer) {
                     this.el = el;
+                    this.renderer = renderer;
                 }
                 AutoGrowDirective.prototype.onFocus = function () {
-                    this.el.nativeElement.style.width = '200';
-                    this.el.nativeElement.style.backgroundColor = "red";
+                    this.renderer.setElementStyle(this.el.nativeElement, 'width', 200);
+                    this.renderer.setElementStyle(this.el.nativeElement, 'backgroundColor', 'red');
+                    // this.el.nativeElement.style.backgroundColor="red";
                 };
                 AutoGrowDirective.prototype.onBlur = function () {
-                    this.el.nativeElement.style.width = '100';
-                    this.el.nativeElement.style.backgroundColor = "white";
+                    this.renderer.setElementStyle(this.el.nativeElement, 'width', 100);
+                    this.renderer.setElementStyle(this.el.nativeElement, 'backgroundColor', 'white');
                 };
                 AutoGrowDirective = __decorate([
                     core_1.Directive({
@@ -47,7 +40,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                             '(blur)': 'onBlur()'
                         }
                     }), 
-                    __metadata('design:paramtypes', [core_1.ElementRef])
+                    __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])
                 ], AutoGrowDirective);
                 return AutoGrowDirective;
             }());
