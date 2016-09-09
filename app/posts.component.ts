@@ -13,10 +13,12 @@ export class PostsComponent {
 
 	title: string = 'Overview of Posts' ;
 
+	posts : Array<any>;
+
 	
 	constructor(private _postService: PostService) {
 		this._postService.getPosts()
-			.subscribe(posts => console.log(posts));
+			.subscribe(posts => this.posts = posts );
 		
 	}
 }
