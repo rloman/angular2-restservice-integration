@@ -18,7 +18,7 @@ export class PostsComponent {
 	
 	constructor(private _postService: PostService) {
 		this._postService.getPosts()
-			.subscribe(posts => this.posts = posts );
+			.subscribe(posts => console.log(posts) );
 		
 	}
 }

@@ -26,11 +26,10 @@ System.register(['angular2/core', './post.service', 'angular2/http'], function(e
         execute: function() {
             PostsComponent = (function () {
                 function PostsComponent(_postService) {
-                    var _this = this;
                     this._postService = _postService;
                     this.title = 'Overview of Posts';
                     this._postService.getPosts()
-                        .subscribe(function (posts) { return _this.posts = posts; });
+                        .subscribe(function (posts) { return console.log(posts); });
                 }
                 PostsComponent = __decorate([
                     core_1.Component({
