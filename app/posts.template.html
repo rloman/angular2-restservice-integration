@@ -1,9 +1,7 @@
 <h2>Courses</h2> Title: {{title}} <input type='text' autoGrow />
 <div *ngIf="posts">
     <ul>
-        <li *ngFor="#post of posts">{{ post.id }}
-            {{ post.title}}
-            {{ post.body }}
+        <li *ngFor="#post of posts">{{ post.id }} -  {{ post.title}} --- {{ post.body }}
         </li>
     </ul>
 </div>
