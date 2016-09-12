@@ -1,6 +1,10 @@
 <h2>Courses</h2> Title: {{title}} <input type='text' autoGrow />
-<div >
+<div *ngIf="posts">
     <ul>
-        <li *ngFor="#post of posts">{{ post.id }}</li>
+        <li *ngFor="#post of posts">{{ post.id }}
+            {{ post.title}}
+            {{ post.body }}
+        </li>
     </ul>
 </div>
+<div *ngIf="!posts" >You don't have any posts yet</div>
