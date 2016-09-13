@@ -24,13 +24,14 @@ System.register(['angular2/http', 'rxjs/add/operator/map', 'angular2/core'], fun
         execute: function() {
             PostService = (function () {
                 function PostService(_http) {
+                    var _this = this;
                     this._http = _http;
+                    this.getPosts = function () {
+                        return _this._http.get("http://jsonplaceholder.typicode.com/posts")
+                            .map(function (res) { return res.json(); });
+                        // return ["a", "b","c"];
+                    };
                 }
-                PostService.prototype.getPosts = function () {
-                    return this._http.get("http://jsonplaceholder.typicode.com/posts")
-                        .map(function (res) { return res.json(); });
-                    // return ["a", "b","c"];
-                };
                 PostService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [http_1.Http])

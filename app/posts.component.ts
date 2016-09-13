@@ -1,6 +1,7 @@
 import {Component, OnInit} from 'angular2/core'
 import {PostService} from './post.service'
-import {HTTP_PROVIDERS} from 'angular2/http'
+import {HTTP_PROVIDERS} from 'angular2/http';
+import {Post} from './post';
 
 @Component({
 	selector: 'posts',
@@ -13,11 +14,10 @@ export class PostsComponent implements OnInit {
 
 	title: string = 'Overview of Posts';
 
-	posts: Array<any>;
+	private posts: Post[];
 
 
 	constructor(private _postService: PostService) {
-
 
 	}
 
