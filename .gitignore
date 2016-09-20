@@ -1,2 +1,2 @@
-.js.map
-.js
+app/*.js.map
+app/*.js
