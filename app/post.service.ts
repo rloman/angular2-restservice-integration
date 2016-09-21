@@ -12,7 +12,7 @@ export class PostService {
 	}
 
 
-	getPosts : Observable<Post[]>() {
+	getPosts() {
 		return this._http.get("http://jsonplaceholder.typicode.com/posts")
 			.map(res => res.json());
 			// return ["a", "b","c"];
