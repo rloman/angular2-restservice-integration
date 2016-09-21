@@ -12,9 +12,8 @@ export class PostService {
 	}
 
 
-	getPosts() {
+	getPosts() : Observable<Post[]> {
 		return this._http.get("http://jsonplaceholder.typicode.com/posts")
 			.map(res => res.json());
-			// return ["a", "b","c"];
 	}
 }
