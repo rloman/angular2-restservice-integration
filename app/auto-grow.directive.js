@@ -40,9 +40,10 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                             '(blur)': 'onBlur()'
                         }
                     }), 
-                    __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])
+                    __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object, (typeof (_b = typeof core_1.Renderer !== 'undefined' && core_1.Renderer) === 'function' && _b) || Object])
                 ], AutoGrowDirective);
                 return AutoGrowDirective;
+                var _a, _b;
             }());
             exports_1("AutoGrowDirective", AutoGrowDirective);
         }

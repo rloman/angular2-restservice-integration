@@ -1,0 +1,30 @@
+Stap 0
+$ git clone https://rloman@github.com/rloman/angular2-restservice-integration.git
+
+ga naar de directory angular-2-restservice-integration
+
+Dan ... 
+
+Stap 1
+
+$ Installeer versie 4.4.7 of 4.5.x van NodeJS
+
+Stap 2
+
+Voer uit
+
+$ npm install -g typescript
+$ npm install -g typings
+
+Daarna ga je naar de directory toe (waar je wellicht al staat maar goed) van de applicatie (angular-2-restservice-integration)
+
+Dan doe je daar
+$ npm install
+
+en daarna 
+
+$ npm start
+
+en dan zou je de default browser moeten openen op http://localhost:3000
+
+
