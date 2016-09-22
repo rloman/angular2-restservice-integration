@@ -3,6 +3,11 @@ $ git clone https://rloman@github.com/rloman/angular2-restservice-integration.gi
 
 ga naar de directory angular-2-restservice-integration
 
+$ git checkout feature/angular2-first-learning
+
+
+
+
 Dan ... 
 
 Stap 1
