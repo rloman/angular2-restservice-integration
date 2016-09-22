@@ -24,17 +24,17 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     this.renderer = renderer;
                 }
                 AutoGrowDirective.prototype.onFocus = function () {
-                    this.renderer.setElementStyle(this.el.nativeElement, 'width', 200);
-                    this.renderer.setElementStyle(this.el.nativeElement, 'backgroundColor', 'red');
-                    // this.el.nativeElement.style.backgroundColor="red";
+                    // Implement your event handling code here!
+                    // Which might be something like this
+                    this.renderer.setElementStyle(this.el.nativeElement, 'width', '187');
                 };
                 AutoGrowDirective.prototype.onBlur = function () {
-                    this.renderer.setElementStyle(this.el.nativeElement, 'width', 100);
-                    this.renderer.setElementStyle(this.el.nativeElement, 'backgroundColor', 'white');
+                    // Implement your event handling code here!
+                    // Which might be something like this
+                    this.renderer.setElementStyle(this.el.nativeElement, 'width', '168');
                 };
                 AutoGrowDirective = __decorate([
-                    core_1.Directive({
-                        selector: '[autoGrow]',
+                    core_1.Directive({ selector: '[autoGrow]',
                         host: {
                             '(focus)': 'onFocus()',
                             '(blur)': 'onBlur()'

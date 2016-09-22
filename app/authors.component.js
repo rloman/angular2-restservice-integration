@@ -23,13 +23,14 @@ System.register(['angular2/core', './author.service'], function(exports_1, conte
         execute: function() {
             AuthorsComponent = (function () {
                 function AuthorsComponent(authorService) {
-                    this.title = "The title of the authors";
+                    this.title = 'Overview of Authors';
+                    this.authors = [];
                     this.authors = authorService.getAuthors();
                 }
                 AuthorsComponent = __decorate([
                     core_1.Component({
                         selector: 'authors',
-                        template: "\n\t\t\t<h2>Authors</h2>\n\t\t\t{{ title }}\n\n\t\t\t<ul>\n\t\t\t\t<li *ngFor=\"#author of authors\">\n\t\t\t\t\t{{ author }}\n\t\t\t\t</li>\n\t\t\t</ul>\n\n\t\t",
+                        template: "\n\t\t\n\t\t{{ title }}<h2>Authors</h2>\n<ul><li *ngFor='#element of authors'>{{ element }}</li></ul>\n\t\t",
                         providers: [author_service_1.AuthorService]
                     }), 
                     __metadata('design:paramtypes', [author_service_1.AuthorService])

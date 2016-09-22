@@ -1,13 +1,19 @@
-import {Component} from 'angular2/core';
-import {CoursesComponent} from './courses.component';
-import {AuthorsComponent} from './authors.component';
-
+import {Component} from 'angular2/core'
+import {CoursesComponent} from './courses.component'
+import {AuthorsComponent} from './authors.component'
+import {ButtonsComponent} from './buttons.component'
 
 @Component({
-    selector: 'my-app',
-    template: `<h1>Hello Angular2 Raymie</h1>
-    		<courses></courses>
-    		<authors></authors>`,
-    directives: [CoursesComponent, AuthorsComponent]
+	selector: 'my-app', 
+	template: `
+		
+<h1>My First Angular App</h1>
+		<courses></courses>
+		<authors></authors>
+		<buttons></buttons>
+		`, 
+	directives: [CoursesComponent, AuthorsComponent, ButtonsComponent]
 })
-export class AppComponent { }
+export class AppComponent {
+
+}

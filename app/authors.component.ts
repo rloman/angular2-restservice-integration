@@ -1,25 +1,20 @@
-import {Component} from 'angular2/core';
-import {AuthorService} from './author.service';
+import {Component} from 'angular2/core'
+import {AuthorService} from './author.service'
 
 @Component({
 	selector: 'authors', 
 	template: `
-			<h2>Authors</h2>
-			{{ title }}
-
-			<ul>
-				<li *ngFor="#author of authors">
-					{{ author }}
-				</li>
-			</ul>
-
-		`,
+		
+		{{ title }}<h2>Authors</h2>
+<ul><li *ngFor='#element of authors'>{{ element }}</li></ul>
+		`, 
 	providers: [AuthorService]
 })
 export class AuthorsComponent {
 
-title: string =  "The title of the authors";
-authors;
+	title: string = 'Overview of Authors'
+
+	authors = []
 
 	constructor(authorService: AuthorService) {
 		this.authors = authorService.getAuthors();

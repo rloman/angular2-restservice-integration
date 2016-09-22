@@ -1,30 +1,27 @@
-import {Directive, ElementRef, Renderer} from 'angular2/core';
+import {Directive, ElementRef, Renderer} from 'angular2/core'
 
-@Directive({
-	selector: '[autoGrow]',	
+@Directive ({selector: '[autoGrow]',
 	host: {
-		'(focus)' : 'onFocus()',
+		'(focus)': 'onFocus()',
 		'(blur)': 'onBlur()'
 	}
+
 })
 export class AutoGrowDirective {
 
-
-	constructor(private el: ElementRef, private renderer:  Renderer) {
+	constructor(private el: ElementRef, private renderer: Renderer) {
 	}
 
-
-	onFocus() {
-
-		this.renderer.setElementStyle(this.el.nativeElement, 'width', 200);
-		this.renderer.setElementStyle(this.el.nativeElement, 'backgroundColor', 'red');
-
-		// this.el.nativeElement.style.backgroundColor="red";
+	onFocus(){
+		// Implement your event handling code here!
+		 // Which might be something like this
+		this.renderer.setElementStyle(this.el.nativeElement, 'width', '187');
 	}
 
-	onBlur() {
-		this.renderer.setElementStyle(this.el.nativeElement, 'width', 100);
-		this.renderer.setElementStyle(this.el.nativeElement, 'backgroundColor', 'white');
+	onBlur(){
+		// Implement your event handling code here!
+		 // Which might be something like this
+		this.renderer.setElementStyle(this.el.nativeElement, 'width', '168');
 	}
-	
+
 }

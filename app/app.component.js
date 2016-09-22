@@ -1,4 +1,4 @@
-System.register(['angular2/core', './courses.component', './authors.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './courses.component', './authors.component', './buttons.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './courses.component', './authors.component'],
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, courses_component_1, authors_component_1;
+    var core_1, courses_component_1, authors_component_1, buttons_component_1;
     var AppComponent;
     return {
         setters:[
@@ -22,6 +22,9 @@ System.register(['angular2/core', './courses.component', './authors.component'],
             },
             function (authors_component_1_1) {
                 authors_component_1 = authors_component_1_1;
+            },
+            function (buttons_component_1_1) {
+                buttons_component_1 = buttons_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -30,8 +33,8 @@ System.register(['angular2/core', './courses.component', './authors.component'],
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "<h1>Hello Angular2 Raymie</h1>\n    \t\t<courses></courses>\n    \t\t<authors></authors>",
-                        directives: [courses_component_1.CoursesComponent, authors_component_1.AuthorsComponent]
+                        template: "\n\t\t\n<h1>My First Angular App</h1>\n\t\t<courses></courses>\n\t\t<authors></authors>\n\t\t<buttons></buttons>\n\t\t",
+                        directives: [courses_component_1.CoursesComponent, authors_component_1.AuthorsComponent, buttons_component_1.ButtonsComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

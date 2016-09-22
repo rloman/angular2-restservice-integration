@@ -9,7 +9,7 @@ System.register([], function(exports_1, context_1) {
                 function AuthorService() {
                 }
                 AuthorService.prototype.getAuthors = function () {
-                    return ["John", "Knuth", "Dijkstra"];
+                    return ['Andrew Hunt', 'Dave Thomas', 'Donald Knuth'];
                 };
                 return AuthorService;
             }());

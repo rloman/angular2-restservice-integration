@@ -9,7 +9,7 @@ System.register([], function(exports_1, context_1) {
                 function CourseService() {
                 }
                 CourseService.prototype.getCourses = function () {
-                    return ["Math", "Programming", "Prolog"];
+                    return ['aaa', 'bbb'];
                 };
                 return CourseService;
             }());
