@@ -1,4 +1,4 @@
-System.register(['angular2/core', './liebregtsklanten.component'], function(exports_1, context_1) {
+System.register(['angular2/http', 'rxjs/add/operator/map', 'angular2/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,32 +10,34 @@ System.register(['angular2/core', './liebregtsklanten.component'], function(expo
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, liebregtsklanten_component_1;
-    var AppComponent;
+    var http_1, core_1;
+    var KlantService;
     return {
         setters:[
+            function (http_1_1) {
+                http_1 = http_1_1;
+            },
+            function (_1) {},
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (liebregtsklanten_component_1_1) {
-                liebregtsklanten_component_1 = liebregtsklanten_component_1_1;
             }],
         execute: function() {
-            AppComponent = (function () {
-                function AppComponent() {
+            KlantService = (function () {
+                function KlantService(_http) {
+                    this._http = _http;
                 }
-                AppComponent = __decorate([
-                    core_1.Component({
-                        selector: 'my-app',
-                        templateUrl: 'app/app.template.html',
-                        directives: [liebregtsklanten_component_1.liebregtsklantenComponent]
-                    }), 
-                    __metadata('design:paramtypes', [])
-                ], AppComponent);
-                return AppComponent;
+                KlantService.prototype.getKlanten = function () {
+                    return this._http.get("http://localhost:8081/api/klanten")
+                        .map(function (res) { return res.json(); });
+                };
+                KlantService = __decorate([
+                    core_1.Injectable(), 
+                    __metadata('design:paramtypes', [http_1.Http])
+                ], KlantService);
+                return KlantService;
             }());
-            exports_1("AppComponent", AppComponent);
+            exports_1("KlantService", KlantService);
         }
     }
 });
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=klant.service.js.map

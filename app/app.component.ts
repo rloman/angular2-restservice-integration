@@ -1,7 +1,12 @@
-import {Component} from 'angular2/core';
+import {Component} from 'angular2/core'
+import {liebregtsklantenComponent} from './liebregtsklanten.component'
 
 @Component({
-    selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1>'
+	selector: 'my-app', 
+	templateUrl: 'app/app.template.html' 
+, 
+	directives: [liebregtsklantenComponent]
 })
-export class AppComponent { }
+export class AppComponent {
+
+}

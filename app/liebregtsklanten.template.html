@@ -1,0 +1,6 @@
+<div *ngIf='klanten'>
+    <ul>
+        <li *ngFor='#klant of klanten'>{{ klant.naam }} {{ klant.adres}} </li>
+    </ul>
+</div>
+<div *ngIf='!klanten'>You don't have any klanten yet</div>
