@@ -1,11 +1,19 @@
 import {Component} from 'angular2/core'
-import {liebregtsklantenComponent} from './liebregtsklanten.component'
+import {KlantenComponent} from './klanten.component'
+import {AdressenComponent} from './adressen.component'
+import {RouteConfig, RouterOutlet} from 'angular2/router';
+@RouteConfig(
+	[
+		{path:'klantens', name:'Klantens', component:KlantenComponent}, 
+{path:'adressens', name:'Adressens', component:AdressenComponent}, 
+	]
+)
 
 @Component({
 	selector: 'my-app', 
 	templateUrl: 'app/app.template.html' 
 , 
-	directives: [liebregtsklantenComponent]
+	directives: [KlantenComponent, AdressenComponent, RouterOutlet]
 })
 export class AppComponent {
 

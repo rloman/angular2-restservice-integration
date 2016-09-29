@@ -11,7 +11,7 @@ export class AdresService {
 
 	constructor(private _http:Http) {
 	}
-	getAdressen() : Observable<Adres[]> {
+	getAdress() : Observable<Adres[]> {
 		return this._http.get("http://localhost:8081/api/adressen")
 			.map(res => res.json());
 	}

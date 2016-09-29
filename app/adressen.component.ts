@@ -1,20 +1,20 @@
 import {Component} from 'angular2/core'
 import {AdresService} from './adres.service'
-import {Klant} from './klant';
+import {Adres} from './adres';
 import {HTTP_PROVIDERS} from 'angular2/http';
 
 @Component({
-	selector: 'klanten', 
-	templateUrl: 'app/liebregtsklanten.template.html' 
+	selector: 'adressen', 
+	templateUrl: 'app/adressen.template.html' 
 , 
-	providers: [KlantService, HTTP_PROVIDERS]
+	providers: [AdresService, HTTP_PROVIDERS]
 })
-export class liebregtsklantenComponent {
+export class AdressenComponent {
 
 
-	klanten: Klant[]  ;
+	adressen: Adres[]  ;
 
-	constructor(klantService: KlantService) {
-		klantService.getKlanten().subscribe(klanten => this.klanten = klanten);
+	constructor(adresService: AdresService) {
+		adresService.getAdress().subscribe(adressen => this.adressen = adressen);
 	}
 }

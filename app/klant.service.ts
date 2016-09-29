@@ -11,7 +11,7 @@ export class KlantService {
 
 	constructor(private _http:Http) {
 	}
-	getKlanten() : Observable<Klant[]> {
+	getKlants() : Observable<Klant[]> {
 		return this._http.get("http://localhost:8081/api/klanten")
 			.map(res => res.json());
 	}
