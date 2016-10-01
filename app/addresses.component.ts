@@ -2,13 +2,14 @@ import {Component} from 'angular2/core'
 import {AddressService} from './address.service'
 import {Address} from './address';
 import {HTTP_PROVIDERS} from 'angular2/http';
+import {RouteConfig, RouterOutlet, RouterLink} from 'angular2/router';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 
 @Component({
 	selector: 'addresses', 
 	templateUrl: 'app/addresses.component.html' 
 , 
-	providers: [AddressService, HTTP_PROVIDERS],
+	providers: [AddressService, HTTP_PROVIDERS], 
 	directives: [ROUTER_DIRECTIVES]
 })
 export class AddressesComponent {

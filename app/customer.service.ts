@@ -15,4 +15,9 @@ export class CustomerService {
 		return this._http.get("http://localhost:8081/api/klanten")
 			.map(res => res.json());
 	}
+
+		getCustomer(id : number) : Observable<Customer[]> {
+		return this._http.get("http://localhost:8081/api/klanten/"+id)
+			.map(res => res.json());
+	}
 }

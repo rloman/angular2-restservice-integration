@@ -4,20 +4,21 @@ import {Customer} from './customer';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {RouteConfig, RouterOutlet, RouterLink} from 'angular2/router';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {RouteParams} from 'angular2/router';
 
 @Component({
-	selector: 'customers', 
-	templateUrl: 'app/customers.component.html' 
+	selector: 'customer', 
+	templateUrl: 'app/customer.component.html' 
 , 
 	providers: [CustomerService, HTTP_PROVIDERS], 
 	directives: [ROUTER_DIRECTIVES]
 })
-export class CustomersComponent {
+export class CustomerComponent {
 
 
-	customers: Customer[]  ;
+	customer: Customer  ;
 
-	constructor(customerService: CustomerService) {
-		customerService.getCustomers().subscribe(customers => this.customers = customers);
+	constructor(private _customerService: CustomerService, private _routeParams :RouteParams) {
+		_customerService.getCustomer(parseInt(_routeParams.get("id"))).subscribe(customer => this.customer = customer);
 	}
 }
