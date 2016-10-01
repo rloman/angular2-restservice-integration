@@ -1,0 +1,7 @@
+<h1>:: Addresses ::</h1>
+<div *ngIf='addresses'>
+    <ul>
+        <li *ngFor='#addresse of addresses'><a [routerLink]="['Adres', {id:addresse.id}]">{{ addresse.id }}</a>{{ addresse | json }}</li>
+    </ul>
+</div>
+<div *ngIf='!addresses'>You don't have any addresses yet</div>
