@@ -19,6 +19,17 @@ export class CustomerComponent {
 	customer: Customer  ;
 
 	constructor(private _customerService: CustomerService, private _routeParams :RouteParams) {
-		_customerService.getCustomer(parseInt(_routeParams.get("id"))).subscribe(customer => this.customer = customer);
+		_customerService.getCustomer(parseInt(_routeParams.get("id"))).subscribe(customer => 
+			this.customer = customer);
+	}
+
+	createCustomer() {
+		this.customer = {"naam" : "Loman"};
+
+		this._customerService.PostRequest(this.customer).subscribe(
+			response => console.log(response)
+		);
+
+		console.log(this.customer);
 	}
 }
