@@ -30,7 +30,7 @@ export class CustomerService {
 			.map(res => res.json());
 	}
 
-	createWithPost(data) {
+	createWithPost(customer) {
         this.headers = new Headers();
         this.headers.append("Content-Type", 'application/json');
 		// this.headers.append("Authorization", 'Bearer ' + localStorage.getItem('id_token'))
@@ -39,7 +39,7 @@ export class CustomerService {
             method: RequestMethod.Post,
             url: this._url,
             headers: this.headers,
-            body: JSON.stringify(data)
+            body: JSON.stringify(customer)
         })
 
         return this._http.request(new Request(this.requestoptions))
