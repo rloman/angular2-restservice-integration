@@ -30,7 +30,7 @@ export class CustomerService {
 			.map(res => res.json());
 	}
 
-	PostRequest(data) {
+	createWithPost(data) {
         this.headers = new Headers();
         this.headers.append("Content-Type", 'application/json');
 		// this.headers.append("Authorization", 'Bearer ' + localStorage.getItem('id_token'))

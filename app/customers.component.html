@@ -1,2 +1,4 @@
 <h1>:: Customers ::</h1>
 <div *ngIf='customers'><ul><li *ngFor='#customer of customers'><a [routerLink]="['Customer', {id:customer.id}]">{{ customer.id }}</a>{{ customer | json }}</li></ul></div><div *ngIf='!customers'>You don't have any customers yet</div>
+
+<button (click)="createCustomer()">Create</button>

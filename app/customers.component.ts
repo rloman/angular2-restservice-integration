@@ -17,7 +17,19 @@ export class CustomersComponent {
 
 	customers: Customer[]  ;
 
-	constructor(customerService: CustomerService) {
-		customerService.getCustomers().subscribe(customers => this.customers = customers);
+	customer: Customer;
+
+	constructor(private _customerService: CustomerService) {
+		_customerService.getCustomers().subscribe(customers => this.customers = customers);
+	}
+
+	createCustomer() {
+		this.customer = {"naam" : "Loman"};
+
+		this._customerService.createWithPost(this.customer).subscribe(
+			response => console.log(response)
+		);
+
+		console.log(this.customer);
 	}
 }
