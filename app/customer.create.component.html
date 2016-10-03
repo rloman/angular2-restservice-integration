@@ -2,13 +2,16 @@
 
 
 
-<div class="panel panel-default">
-    <div class="panel-body">
-
-        Naam:<input type="text" [(ngModel)]="naam"><br> Debnr: <input type="text" [(ngModel)]="debiteurennummer">
+<div class="input-group">
 
 
-        <button (click)="create()">Create</button>
+    Naam: <input type="text" class="form-control" [(ngModel)]="naam"><br>
+    Debnr: <input type="text" class="form-control" [(ngModel)]="debiteurennummer"> <br>
 
-    </div>
+
+   
+
 </div>
+ <span class="input-group-btn">
+        <button class="btn btn-primary" (click)="create()">Create</button>
+    </span>
